@@ -1,6 +1,12 @@
 # CHANGELOG
 
-## 0.10.2 - UNRELEASED
+## 0.10.3 - 2025-10-20
+
+Requires `libfranka` >= 0.8.0
+
+* docs: Move documentation under each package.
+
+## 0.10.2 - 2023-12-20
 
 Requires `libfranka` >= 0.8.0
 
