@@ -151,7 +151,7 @@ pipeline {
                             sh """
                                 cd src/franka_ros
                                 .ci/checkgithistory.sh \\
-                                    https://github.com/frankaemika/franka_ros.git develop
+                                    https://github.com/frankarobotics/franka_ros.git develop
                             """
                         }
                     }

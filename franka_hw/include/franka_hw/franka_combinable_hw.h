@@ -25,7 +25,7 @@ namespace franka_hw {
  * control multiple robots from a single controller.
  * Note: This class allows for torque (effort) control only due to the lack of synchronization
  * between master controllers of different robots. For more information see the documentation at
- * https://frankaemika.github.io/docs/franka_ros.html .
+ * https://frankarobotics.github.io/docs/franka_ros.html .
  */
 class FrankaCombinableHW : public FrankaHW {
  public:
