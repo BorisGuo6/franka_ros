@@ -136,4 +136,114 @@
       <child link="${arm_id}_link8"/>
     </joint>
   </xacro:macro>
+
+  <link name="robotiq_eef"/> 
+  
+<joint name="robotiq_eef_joint" type="fixed">
+    <origin xyz="0 0 0.244" rpy="0 0 0"/>
+    <parent link="${arm_id}_link8"/>
+    <child link="robotiq_eef"/>
+  </joint>
+
+  <link name="left_finger_tip">
+    <collision>
+      <geometry>
+        <!-- Box shape with dimensions to match the visual representation -->
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    </link> 
+  
+<joint name="left_finger_joint" type="fixed">
+    <origin xyz="0 -0.068 0.22" rpy="0 0 0"/>
+    <parent link="panda_link8"/>
+    <child link="left_finger_tip"/>
+  </joint>
+
+
+<link name="right_finger_tip">
+  <collision>
+    <geometry>
+      <!-- Box shape with dimensions to match the visual representation -->
+      <box size="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link> 
+  
+<joint name="right_finger_joint" type="fixed">
+    <origin xyz="0 0.068 0.22" rpy="0 0 0"/>
+    <parent link="panda_link8"/>
+    <child link="right_finger_tip"/>
+  </joint>
+
+  <link name="camera_link"> 
+    <collision>
+      <geometry>
+        <!-- Box shape with dimensions to match the visual representation -->
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="camera_joint" type="fixed">
+      <origin xyz="0.08 0  0.04" rpy="0 0 0"/>
+      <parent link="panda_link8"/>
+      <child link="camera_link"/>
+    </joint>
+
+    <!-- <link name="table">
+     
+      <visual>
+        <geometry>
+
+          <box size="1 1  0.02"/>
+        </geometry>
+
+        <material name="abc">
+          <color rgba="1 1 1 1"/> 
+        </material>
+      </visual>
+
+      <collision>
+        <geometry>
+          <box size="1 1  0.02"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="table_joint" type="fixed">
+      <origin xyz="0.6 0  0.214" rpy="0 0 0"/>
+      <parent link="panda_link0"/>
+      <child link="table"/>
+    </joint>
+
+      <visual>
+        <geometry>
+          <box size="0.01 2 2"/>
+        </geometry>
+        <material name="abc">
+          <color rgba="1 1 1 1"/> 
+        </material>
+      </visual>
+  
+
+      <collision>
+        <geometry>
+          <box size="0.01 1 1"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="wall_joint" type="fixed">
+      <origin xyz="-0.3  0  0" rpy="0 0 0"/>
+      <parent link="panda_link0"/>
+      <child link="back_wall"/>
+    </joint> -->
+
+    <!-- <enable_collisions link1="table" link2="left_finger_tip" reason="Adjacent" />
+    <enable_collisions link1="table" link2="right_finger_tip" reason="Adjacent" />
+    <enable_collisions link1="back_wall" link2="left_finger_tip" reason="Adjacent" />
+    <enable_collisions link1="back_wall" link2="right_finger_tip" reason="Adjacent" />
+    <enable_collisions link1="camera_link" link2="table" reason="Adjacent" />
+    <enable_collisions link1="camera_link" link2="back_wall" reason="Adjacent" /> -->
 </robot>
